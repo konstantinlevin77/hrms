@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.konstantinlevin77.hrms.business.abstracts.PositionService;
+import com.konstantinlevin77.hrms.core.results.abstracts.DataResult;
+import com.konstantinlevin77.hrms.core.results.concretes.SuccessDataResult;
 import com.konstantinlevin77.hrms.dataAccess.abstracts.PositionDao;
 import com.konstantinlevin77.hrms.entities.concretes.Position;
 
@@ -20,9 +22,11 @@ public class PositionManager implements PositionService{
 	}
 	
 	@Override
-	public List<Position> getAll() {
+	public DataResult<List<Position>> getAll() {
 		// TODO Auto-generated method stub
-		return this.positionDao.findAll();
+		return new SuccessDataResult<List<Position>>(
+		this.positionDao.findAll(),
+		"Tüm pozisyonlar başarı ile döndürüldü.");
 	}
 
 }
