@@ -22,14 +22,6 @@ public class PositionManager implements PositionService{
 	@Override
 	public List<Position> getAll() {
 		// TODO Auto-generated method stub
-		System.out.println("IMPORTANT!!!!");
-		System.out.println(this.positionDao.findById(1));
-		for (Position position : this.positionDao.findAll()) {
-			System.out.println(position.getName()+position.getId()+"\n");
-		}
-		System.out.println("Length: "+this.positionDao.findAll().size());
-		System.out.println("Finished!");
-		
 		return this.positionDao.findAll();
 	}
 
