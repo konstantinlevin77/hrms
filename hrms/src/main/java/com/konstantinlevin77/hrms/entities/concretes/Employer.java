@@ -11,13 +11,8 @@ import lombok.*;
 @NoArgsConstructor
 @Table(name="employer_users")
 @Data
-@PrimaryKeyJoinColumn(name="user_id")
 public class Employer extends User{
 	
-	@Id
-
-	@Column(name="user_id")
-	private int userId;
 	
 	@Column(name="company_name")
 	private String companyName;
