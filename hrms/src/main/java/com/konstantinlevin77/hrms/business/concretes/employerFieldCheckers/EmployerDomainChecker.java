@@ -19,6 +19,8 @@ public class EmployerDomainChecker implements FieldChecker<Employer, EmployerDao
 		try {
 			String webDomain = this.getWebsiteDomain(data.getCompanyWebsite());
 			String emailDomain = this.getEmailDomain(data.getEmail());
+			System.out.println(webDomain);
+			System.out.println(emailDomain);
 			
 			if (!webDomain.equals(emailDomain)) {
 				return new ErrorResult("Website ve email'in domaini aynı olmalıdır.");
@@ -35,7 +37,7 @@ public class EmployerDomainChecker implements FieldChecker<Employer, EmployerDao
 	private String getWebsiteDomain(String url) throws MalformedURLException{
 		
 		URL websiteUrl = new URL(url);
-		String websiteDomain = websiteUrl.getHost();
+		String websiteDomain = websiteUrl.getHost().replace("www.", "");
 		
 		return websiteDomain;
 		
