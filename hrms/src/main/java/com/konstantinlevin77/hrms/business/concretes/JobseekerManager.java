@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.konstantinlevin77.hrms.adapters.NationalIdVerifierAdapter.NationalIdVerifier;
 import com.konstantinlevin77.hrms.business.abstracts.FieldChecker;
 import com.konstantinlevin77.hrms.business.abstracts.JobseekerService;
+import com.konstantinlevin77.hrms.business.concretes.jobseekerFieldCheckers.JobseekerEmailFieldChecker;
+import com.konstantinlevin77.hrms.business.concretes.jobseekerFieldCheckers.JobseekerNationalIdFieldChecker;
 import com.konstantinlevin77.hrms.core.results.abstracts.DataResult;
 import com.konstantinlevin77.hrms.core.results.abstracts.Result;
 import com.konstantinlevin77.hrms.core.results.concretes.ErrorResult;
@@ -39,11 +41,6 @@ public class JobseekerManager implements JobseekerService{
 	@Override
 	public Result add(Jobseeker jobseeker,NationalIdVerifier nationalIdVerifier) {
 		// TODO Auto-generated method stub
-		
-	
-		
-		
-		
 		
 		String name = jobseeker.getFirstName();
 		String surname = jobseeker.getLastName();

@@ -1,4 +1,4 @@
-package com.konstantinlevin77.hrms.business.concretes;
+package com.konstantinlevin77.hrms.business.concretes.jobseekerFieldCheckers;
 
 import com.konstantinlevin77.hrms.business.abstracts.FieldChecker;
 import com.konstantinlevin77.hrms.core.results.abstracts.Result;

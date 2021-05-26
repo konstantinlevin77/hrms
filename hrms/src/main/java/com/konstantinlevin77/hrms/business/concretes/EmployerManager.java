@@ -6,8 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.konstantinlevin77.hrms.business.abstracts.EmployerService;
+import com.konstantinlevin77.hrms.business.concretes.employerFieldCheckers.EmployerDomainChecker;
+import com.konstantinlevin77.hrms.business.concretes.employerFieldCheckers.EmployerEmailChecker;
 import com.konstantinlevin77.hrms.core.results.abstracts.DataResult;
+import com.konstantinlevin77.hrms.core.results.abstracts.Result;
 import com.konstantinlevin77.hrms.core.results.concretes.SuccessDataResult;
+import com.konstantinlevin77.hrms.core.results.concretes.SuccessResult;
 import com.konstantinlevin77.hrms.dataAccess.abstracts.EmployerDao;
 import com.konstantinlevin77.hrms.entities.concretes.Employer;
 
@@ -29,6 +33,35 @@ public class EmployerManager implements EmployerService{
 		
 		
 	}
+
+	@Override
+	public Result add(Employer employer) {
+		// TODO Auto-generated method stub
+		
+		EmployerDomainChecker domainChecker = new EmployerDomainChecker();
+		EmployerEmailChecker emailChecker = new EmployerEmailChecker();
+		
+		if (domainChecker.check(employer, this.employerDao).isSuccess()) {
+			
+			if (emailChecker.check(employer, this.employerDao).isSuccess()) {
+				
+				this.employerDao.save(employer);
+				return new SuccessResult("Hesabınız onaylandı, lütfen emailinizi onaylayın ve sistem personellerinin hesabınızı onaylamasını bekleyin.");
+				
+			}
+			
+			else {
+				return emailChecker.check(employer, this.employerDao);
+			}
+			
+		}
+		else {
+			return domainChecker.check(employer, this.employerDao);
+		}
+		
+	}
+	
+	
 	
 	
 
