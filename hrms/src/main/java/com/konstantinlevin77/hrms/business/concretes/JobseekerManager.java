@@ -56,7 +56,8 @@ public class JobseekerManager implements JobseekerService{
 				Result idResult = jobseekerNationalIdFieldChecker.check(jobseeker.getNationalIdentity(),jobseekerDao);
 				
 				if (idResult.isSuccess()) {
-					
+					// User will have to verify his email to use his account.
+					jobseeker.setVerified(false);
 					this.jobseekerDao.save(jobseeker);
 					return new SuccessResult("Kullanıcı sisteme eklendi. E-postanızı onaylamayı unutmayın.");
 				}
@@ -77,6 +78,21 @@ public class JobseekerManager implements JobseekerService{
 		else {
 			return new ErrorResult("Tc kimlik doğrulaması başarısız.");
 		}
+		
+	}
+	
+	public Result verify(int id) {
+		
+		Jobseeker jobseeker = this.jobseekerDao.findById(id).get();
+		
+		if(!jobseeker.isVerified()) {
+			return new ErrorResult("Bu hesap zaten onaylanmış!");
+		}
+		
+		jobseeker.setVerified(true);
+		this.jobseekerDao.save(jobseeker);
+		
+		return new SuccessResult("Hesap başarı ile onaylandı!");
 		
 	}
 

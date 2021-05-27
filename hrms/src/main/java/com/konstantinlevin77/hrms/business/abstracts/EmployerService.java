@@ -11,5 +11,7 @@ public interface EmployerService {
 	public DataResult<List<Employer>> getAll();
 	
 	public Result add(Employer employer);
+	
+	
 
 }

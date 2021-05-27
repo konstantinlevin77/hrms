@@ -14,4 +14,6 @@ public interface JobseekerService {
 	
 	public Result add(Jobseeker jobseeker,NationalIdVerifier nationalIdVerifier);
 
+	public Result verify(int id);
+	
 }
