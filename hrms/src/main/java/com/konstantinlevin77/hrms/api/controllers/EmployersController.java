@@ -33,5 +33,10 @@ public class EmployersController {
 	public Result add(@RequestBody Employer employer) {
 		return this.employerService.add(employer);
 	}
+	
+	@PostMapping("/verify-email")
+	public Result add(@RequestBody int id) {
+		return this.employerService.verifyEmail(id);
+	}
 
 }

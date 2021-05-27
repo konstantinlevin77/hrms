@@ -12,6 +12,6 @@ public interface EmployerService {
 	
 	public Result add(Employer employer);
 	
-	public Result verify(int id);
+	public Result verifyEmail(int id);
 
 }

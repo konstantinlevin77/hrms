@@ -45,7 +45,7 @@ public class EmployerManager implements EmployerService{
 		if (domainChecker.check(employer, this.employerDao).isSuccess()) {
 			
 			if (emailChecker.check(employer, this.employerDao).isSuccess()) {
-				
+				employer.setEmailVerified(false);
 				this.employerDao.save(employer);
 				return new SuccessResult("Hesabınız onaylandı, lütfen emailinizi onaylayın ve sistem personellerinin hesabınızı onaylamasını bekleyin.");
 				
@@ -63,7 +63,7 @@ public class EmployerManager implements EmployerService{
 	}
 
 	@Override
-	public Result verify(int id) {
+	public Result verifyEmail(int id) {
 		Employer employer = this.employerDao.findById(id).get();
 		
 		if(employer.isEmailVerified()) {
