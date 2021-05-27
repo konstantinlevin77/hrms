@@ -29,6 +29,6 @@ public class Jobseeker extends User{
 	private short birthOfYear;
 	
 	@Column(name="is_verified")
-	private boolean isVerified;
+	private boolean verified;
 
 }

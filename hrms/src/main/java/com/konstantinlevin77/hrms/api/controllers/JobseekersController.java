@@ -41,6 +41,11 @@ public class JobseekersController {
 		return this.jobseekerService.add(jobseeker, new TestNationalIdVerifierAdapter());
 		
 	}
+	
+	@PostMapping("/verify")
+	public Result verify(@RequestBody int id) {
+		return this.jobseekerService.verify(id);
+	}
 		
 	
 

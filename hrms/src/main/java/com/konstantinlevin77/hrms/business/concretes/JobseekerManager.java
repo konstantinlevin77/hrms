@@ -85,7 +85,7 @@ public class JobseekerManager implements JobseekerService{
 		
 		Jobseeker jobseeker = this.jobseekerDao.findById(id).get();
 		
-		if(!jobseeker.isVerified()) {
+		if(jobseeker.isVerified()) {
 			return new ErrorResult("Bu hesap zaten onaylanmış!");
 		}
 		
