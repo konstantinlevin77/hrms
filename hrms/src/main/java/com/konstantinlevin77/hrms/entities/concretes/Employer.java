@@ -23,4 +23,6 @@ public class Employer extends User{
 	@Column(name="phone_number")
 	private String phoneNumber;
 
+	@Column(name="is_email_verified")
+	private boolean emailVerified;
 }
