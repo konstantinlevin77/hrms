@@ -51,5 +51,10 @@ public class JobPostingsController {
 		return this.jobPostingService.getActiveJobPostingsOrderedByDate();
 	}
 	
+	@GetMapping("/getActiveAllByCompanyName")
+	public DataResult<List<JobPosting>> getActiveJobPostingsByCompanyName(@RequestParam String companyName){
+		return this.jobPostingService.getActiveJobPostingsByCompanyName(companyName);
+	}
+	
 
 }

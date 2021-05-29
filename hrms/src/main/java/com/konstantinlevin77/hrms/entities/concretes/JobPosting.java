@@ -45,6 +45,11 @@ public class JobPosting {
 	@Column(name="active")
 	private boolean active;
 	
+	@ManyToOne
+	@JoinColumn(name="employer_id")
+	private Employer employer;
+	
+	
 	
 
 }

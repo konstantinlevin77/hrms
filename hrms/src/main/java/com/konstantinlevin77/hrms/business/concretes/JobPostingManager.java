@@ -66,6 +66,14 @@ public class JobPostingManager implements JobPostingService {
 	}
 
 
+	@Override
+	public DataResult<List<JobPosting>> getActiveJobPostingsByCompanyName(String companyName) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<JobPosting>>
+		(this.jobPostingDao.findActiveJobPostingsByCompanyName(companyName));
+	}
+
+
 	
 
 }
