@@ -38,6 +38,15 @@ public class JobPostingManager implements JobPostingService {
 		this.jobPostingDao.save(jobPosting);
 		return new SuccessResult("Başarı ile eklendi.");
 	}
+
+
+	@Override
+	public Result changeActiveById(int id, boolean active) {
+		JobPosting jobPosting = this.jobPostingDao.findById(id).get();
+		jobPosting.setActive(active);
+		this.jobPostingDao.save(jobPosting);
+		return new SuccessResult("Aktiflik durumu başarı ile değiştirildi.");
+	}
 	
 
 }

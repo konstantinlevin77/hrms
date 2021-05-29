@@ -12,4 +12,5 @@ public interface JobPostingService {
 	
 	public Result add(JobPosting jobPosting);
 	
+	public Result changeActiveById(int id,boolean active);
 }

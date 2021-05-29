@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.konstantinlevin77.hrms.business.abstracts.JobPostingService;
@@ -33,6 +34,11 @@ public class JobPostingsController {
 	@PostMapping("/add")
 	public Result add(@RequestBody JobPosting jobPosting) {
 		return this.jobPostingService.add(jobPosting);
+	}
+	
+	@PostMapping("/changeActiveById")
+	public Result changeActiveById(@RequestParam int id, @RequestParam boolean active) {
+		return this.jobPostingService.changeActiveById(id, active);
 	}
 	
 	
