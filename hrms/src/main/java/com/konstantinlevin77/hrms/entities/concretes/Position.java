@@ -1,7 +1,13 @@
 package com.konstantinlevin77.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 
@@ -9,8 +15,10 @@ import lombok.AllArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="positions")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobApplications"})
 public class Position {
 	
 	@Id
@@ -21,9 +29,10 @@ public class Position {
 	@Column(name="name")
 	private String name;
 	
-	public Position() {
-		
-	}
+	@OneToMany(mappedBy="position")
+	private List<JobApplication> jobApplications;
+	
+	
 	
 	
 
