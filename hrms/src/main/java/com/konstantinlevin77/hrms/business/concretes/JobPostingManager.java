@@ -47,6 +47,14 @@ public class JobPostingManager implements JobPostingService {
 		this.jobPostingDao.save(jobPosting);
 		return new SuccessResult("Aktiflik durumu başarı ile değiştirildi.");
 	}
+
+
+	@Override
+	public DataResult<List<JobPosting>> getActiveAll() {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<JobPosting>>
+		(this.jobPostingDao.findActiveJobPostings());
+	}
 	
 
 }

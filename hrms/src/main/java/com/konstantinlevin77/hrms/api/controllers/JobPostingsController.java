@@ -41,6 +41,10 @@ public class JobPostingsController {
 		return this.jobPostingService.changeActiveById(id, active);
 	}
 	
+	@GetMapping("/getActiveAll")
+	public DataResult<List<JobPosting>> getActiveAll() {
+		return this.jobPostingService.getActiveAll();
+	}
 	
 
 }
