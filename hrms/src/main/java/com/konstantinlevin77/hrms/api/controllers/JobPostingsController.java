@@ -34,5 +34,7 @@ public class JobPostingsController {
 	public Result add(@RequestBody JobPosting jobPosting) {
 		return this.jobPostingService.add(jobPosting);
 	}
+	
+	
 
 }
