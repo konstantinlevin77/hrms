@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="job_applications")
-public class JobApplication {
+public class JobPosting {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
