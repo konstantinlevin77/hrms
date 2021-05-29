@@ -46,5 +46,10 @@ public class JobPostingsController {
 		return this.jobPostingService.getActiveAll();
 	}
 	
+	@GetMapping("/getActiveAllOrderedByDate")
+	public DataResult<List<JobPosting>> getActiveJobPostingsOrderedByDate() {
+		return this.jobPostingService.getActiveJobPostingsOrderedByDate();
+	}
+	
 
 }

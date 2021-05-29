@@ -3,6 +3,7 @@ package com.konstantinlevin77.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.konstantinlevin77.hrms.business.abstracts.JobPostingService;
@@ -55,6 +56,16 @@ public class JobPostingManager implements JobPostingService {
 		return new SuccessDataResult<List<JobPosting>>
 		(this.jobPostingDao.findActiveJobPostings());
 	}
+
+
+	@Override
+	public DataResult<List<JobPosting>> getActiveJobPostingsOrderedByDate() {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<JobPosting>>
+		(this.jobPostingDao.findActiveJobPostingsOrderedByDate());
+	}
+
+
 	
 
 }

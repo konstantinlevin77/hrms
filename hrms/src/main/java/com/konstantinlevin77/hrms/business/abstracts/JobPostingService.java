@@ -16,5 +16,6 @@ public interface JobPostingService {
 	
 	public DataResult<List<JobPosting>> getActiveAll();
 	
+	public DataResult<List<JobPosting>> getActiveJobPostingsOrderedByDate();
 	
 }

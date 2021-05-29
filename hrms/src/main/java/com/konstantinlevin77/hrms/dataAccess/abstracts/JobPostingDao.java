@@ -12,4 +12,7 @@ public interface JobPostingDao extends JpaRepository<JobPosting, Integer> {
 	@Query("SELECT j FROM JobPosting j WHERE j.active=true")
 	public List<JobPosting> findActiveJobPostings();
 	
+	@Query("SELECT j FROM JobPosting j WHERE j.active=true ORDER BY j.applicationDeadline DESC")
+	public List<JobPosting> findActiveJobPostingsOrderedByDate();
+
 }
