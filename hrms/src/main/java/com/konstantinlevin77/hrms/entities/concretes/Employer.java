@@ -35,7 +35,6 @@ public class Employer extends User{
 	private String phoneNumber;
 
 	@NotNull
-	@NotBlank
 	@Column(name="is_email_verified")
 	private boolean emailVerified;
 	
@@ -43,7 +42,6 @@ public class Employer extends User{
 	private List<JobPosting> jobPostings;
 	
 	@NotNull
-	@NotBlank
 	@Column(name="system_verified")
 	private boolean systemVerified;
 	

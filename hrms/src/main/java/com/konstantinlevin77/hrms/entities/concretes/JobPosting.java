@@ -54,7 +54,6 @@ public class JobPosting {
 	private LocalDate applicationDeadline;
 	
 	@NotNull
-	@NotBlank
 	@Column(name="active")
 	private boolean active;
 	

@@ -38,7 +38,6 @@ public class Jobseeker extends User{
 	private short birthOfYear;
 	
 	@NotNull
-	@NotBlank
 	@Column(name="is_verified")
 	private boolean verified;
 
