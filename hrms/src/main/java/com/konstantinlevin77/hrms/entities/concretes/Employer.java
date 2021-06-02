@@ -32,4 +32,9 @@ public class Employer extends User{
 	
 	@OneToMany(mappedBy="employer")
 	private List<JobPosting> jobPostings;
+	
+	@Column(name="system_verified")
+	private boolean systemVerified;
+	
+	
 }
