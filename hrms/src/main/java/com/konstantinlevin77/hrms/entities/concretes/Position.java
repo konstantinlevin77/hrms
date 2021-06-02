@@ -3,6 +3,8 @@ package com.konstantinlevin77.hrms.entities.concretes;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -26,8 +28,11 @@ public class Position {
 	@Column(name="id")
 	private int id;
 	
+	@NotNull
+	@NotBlank
 	@Column(name="name")
 	private String name;
+	
 	
 	@OneToMany(mappedBy="position")
 	private List<JobPosting> jobPostings;
