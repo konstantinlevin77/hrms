@@ -1,8 +1,10 @@
 package com.konstantinlevin77.hrms.api.controllers;
 
-import java.util.List;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,10 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.konstantinlevin77.hrms.adapters.NationalIdVerifierAdapter.TestNationalIdVerifierAdapter;
 import com.konstantinlevin77.hrms.business.abstracts.JobseekerService;
-import com.konstantinlevin77.hrms.core.results.abstracts.DataResult;
-import com.konstantinlevin77.hrms.core.results.abstracts.Result;
 import com.konstantinlevin77.hrms.entities.concretes.Jobseeker;
-import com.konstantinlevin77.hrms.entities.concretes.Position;
 
 @RestController
 @RequestMapping("/api/jobseekers")
@@ -30,21 +29,21 @@ public class JobseekersController {
 	}
 	
 	@GetMapping("/getall")
-	public DataResult<List<Jobseeker>> getAll(){
+	public ResponseEntity<?> getAll(){
 		
-		return this.jobseekerService.getAll();
+		return ResponseEntity.ok(this.jobseekerService.getAll());
 		
 	}
 	
 	@PostMapping("/add")
-	public Result add(@RequestBody Jobseeker jobseeker) {
-		return this.jobseekerService.add(jobseeker, new TestNationalIdVerifierAdapter());
+	public ResponseEntity<?>  add(@Valid @RequestBody Jobseeker jobseeker) {
+		return ResponseEntity.ok(this.jobseekerService.add(jobseeker, new TestNationalIdVerifierAdapter()));
 		
 	}
 	
 	@PostMapping("/verify")
-	public Result verify(@RequestBody int id) {
-		return this.jobseekerService.verify(id);
+	public ResponseEntity<?>  verify(@RequestBody int id) {
+		return ResponseEntity.ok(this.jobseekerService.verify(id));
 	}
 		
 	

@@ -30,7 +30,6 @@ public abstract class User {
 	@NotBlank
 	@Column(name="password")
 	private String password;
-	
-	
+		
 
 }
