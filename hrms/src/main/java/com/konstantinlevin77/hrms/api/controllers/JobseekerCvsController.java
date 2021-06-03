@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -46,6 +47,12 @@ public class JobseekerCvsController {
 		
 		return ResponseEntity.ok(this.jobseekerCvService.add(jobseekerCv));
 		
+	}
+	
+	@GetMapping("/getAllByJobseekerId") 
+	public ResponseEntity<?> getAllByJobseekerId(@RequestParam int id) {
+		
+		return ResponseEntity.ok(this.jobseekerCvService.getAllByJobseekerId(id));
 	}
 	
 	// Validations throw this exception

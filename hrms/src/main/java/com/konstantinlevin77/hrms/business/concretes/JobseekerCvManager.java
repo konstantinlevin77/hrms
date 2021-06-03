@@ -36,4 +36,11 @@ public class JobseekerCvManager implements JobseekerCvService {
 		return new SuccessResult();
 	}
 
+	@Override
+	public DataResult<List<JobseekerCv>> getAllByJobseekerId(int id) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<JobseekerCv>>
+		(this.jobseekerCvDao.getAllByJobseeker_Id(id));
+	}
+
 }

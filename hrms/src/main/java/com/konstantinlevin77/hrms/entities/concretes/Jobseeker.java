@@ -1,9 +1,12 @@
 package com.konstantinlevin77.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.konstantinlevin77.hrms.entities.abstracts.User;
 
 import lombok.AllArgsConstructor;
@@ -15,6 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="jobseeker_users")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobseekerCvs"})
 public class Jobseeker extends User{
 	
 	@NotNull
@@ -40,5 +44,9 @@ public class Jobseeker extends User{
 	@NotNull
 	@Column(name="is_verified")
 	private boolean verified;
+	
+	@OneToMany(mappedBy="jobseeker")
+	private List<JobseekerCv> jobseekerCvs;
+	
 
 }

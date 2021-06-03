@@ -11,5 +11,7 @@ public interface JobseekerCvService {
 	public DataResult<List<JobseekerCv>> getAll();
 	
 	public Result add(JobseekerCv jobseekerCv);
+	
+	public DataResult<List<JobseekerCv>> getAllByJobseekerId(int id);
 
 }
