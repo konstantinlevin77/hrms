@@ -1,6 +1,8 @@
 package com.konstantinlevin77.hrms.entities.concretes;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -12,26 +14,22 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="jobseeker_languages")
+@Table(name="jobseeker_technologies")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobseekerCv"})
-public class JobseekerLanguage {
+public class JobseekerTechnology {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@ManyToOne
-	@JoinColumn(name="cv_id")
-	private JobseekerCv jobseekerCv;
-	
+	@NotNull
+	@NotBlank
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="level")
-	private String level;
-	
-	
-	
+	@ManyToOne
+	@JoinColumn(name="cv_id")
+	private JobseekerCv jobseekerCv;
 
 }
