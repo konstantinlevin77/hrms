@@ -1,6 +1,9 @@
 package com.konstantinlevin77.hrms.business.concretes;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,8 @@ import com.konstantinlevin77.hrms.core.results.concretes.SuccessDataResult;
 import com.konstantinlevin77.hrms.core.results.concretes.SuccessResult;
 import com.konstantinlevin77.hrms.dataAccess.abstracts.EmployerDao;
 import com.konstantinlevin77.hrms.entities.concretes.Employer;
+import com.konstantinlevin77.hrms.entities.concretes.JobPosting;
+import com.konstantinlevin77.hrms.entities.dtos.EmployerWithoutJobPostingDto;
 
 @Service
 public class EmployerManager implements EmployerService{
@@ -36,11 +41,23 @@ public class EmployerManager implements EmployerService{
 	}
 
 	@Override
-	public Result add(Employer employer) {
+	public Result add(EmployerWithoutJobPostingDto employerDto) {
 		// TODO Auto-generated method stub
 		
 		EmployerDomainChecker domainChecker = new EmployerDomainChecker();
 		EmployerEmailChecker emailChecker = new EmployerEmailChecker();
+		
+		// Data transfer object to entity 	
+		
+		Employer employer = new Employer();
+		employer.setEmail(employerDto.getEmail());
+		employer.setPassword(employerDto.getPassword());
+		employer.setCompanyName(employerDto.getCompanyName());
+		employer.setCompanyWebsite(employerDto.getCompanyWebSite());
+		employer.setPhoneNumber(employerDto.getPhoneNumber());
+		employer.setJobPostings(new ArrayList<JobPosting>());
+		
+		
 		
 		if (domainChecker.check(employer, this.employerDao).isSuccess()) {
 			

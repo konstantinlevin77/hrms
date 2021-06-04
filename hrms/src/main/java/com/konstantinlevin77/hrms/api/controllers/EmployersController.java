@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.konstantinlevin77.hrms.business.abstracts.EmployerService;
 import com.konstantinlevin77.hrms.core.results.concretes.ErrorDataResult;
 import com.konstantinlevin77.hrms.entities.concretes.Employer;
+import com.konstantinlevin77.hrms.entities.dtos.EmployerWithoutJobPostingDto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,11 +40,11 @@ public class EmployersController {
 	}
 	
 	@PostMapping("/add")
-	public ResponseEntity<?> add(@Valid @RequestBody Employer employer) {
+	public ResponseEntity<?> add(@Valid @RequestBody EmployerWithoutJobPostingDto employer) {
 		return ResponseEntity.ok(this.employerService.add(employer));
 	}
 	
-	@PostMapping("/verify-email")
+	@PostMapping("/verifyEmail")
 	public ResponseEntity<?> add(@RequestBody int id) {
 		return ResponseEntity.ok(this.employerService.verifyEmail(id));
 	}
