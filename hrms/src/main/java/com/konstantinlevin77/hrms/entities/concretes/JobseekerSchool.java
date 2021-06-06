@@ -12,6 +12,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,6 +34,7 @@ public class JobseekerSchool {
 	
 	@ManyToOne
 	@JoinColumn(name="cv_id")
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private JobseekerCv jobseekerCv;
 	
 	@NotNull

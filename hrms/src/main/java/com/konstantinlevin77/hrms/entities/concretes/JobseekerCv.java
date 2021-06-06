@@ -2,8 +2,7 @@ package com.konstantinlevin77.hrms.entities.concretes;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -35,16 +34,16 @@ public class JobseekerCv {
 	@Column(name="cover_letter")
 	private String coverLetter;
 	
-	@OneToMany(mappedBy="jobseekerCv")
+	@OneToMany(mappedBy="jobseekerCv", fetch = FetchType.LAZY)
 	private List<JobseekerSchool> jobseekerSchools;
 	
-	@OneToMany(mappedBy="jobseekerCv")
+	@OneToMany(mappedBy="jobseekerCv", fetch = FetchType.LAZY)
 	private List<JobseekerLanguage> jobseekerLanguages;
 	
-	@OneToMany(mappedBy="jobseekerCv")
+	@OneToMany(mappedBy="jobseekerCv", fetch = FetchType.LAZY)
 	private List<JobseekerExperience> jobseekerExperiences;
 	
-	@OneToMany(mappedBy="jobseekerCv")
+	@OneToMany(mappedBy="jobseekerCv", fetch = FetchType.LAZY)
 	private List<JobseekerTechnology> jobseekerTechnologies;
 	
 	

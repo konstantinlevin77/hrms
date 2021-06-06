@@ -1,5 +1,6 @@
 package com.konstantinlevin77.hrms.business.concretes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import com.konstantinlevin77.hrms.core.results.concretes.SuccessDataResult;
 import com.konstantinlevin77.hrms.core.results.concretes.SuccessResult;
 import com.konstantinlevin77.hrms.dataAccess.abstracts.JobseekerDao;
 import com.konstantinlevin77.hrms.entities.concretes.Jobseeker;
+import com.konstantinlevin77.hrms.entities.concretes.JobseekerCv;
+import com.konstantinlevin77.hrms.entities.dtos.JobseekerWithoutCvDto;
 
 
 
@@ -39,8 +42,19 @@ public class JobseekerManager implements JobseekerService{
 	}
 
 	@Override
-	public Result add(Jobseeker jobseeker,NationalIdVerifier nationalIdVerifier) {
-		// TODO Auto-generated method stub
+	public Result add(JobseekerWithoutCvDto jobseekerDto,NationalIdVerifier nationalIdVerifier) {
+		
+		// Data transfer object to entity
+		Jobseeker jobseeker = new Jobseeker();
+		jobseeker.setEmail(jobseekerDto.getEmail());
+		jobseeker.setPassword(jobseekerDto.getPassword());
+		jobseeker.setFirstName(jobseekerDto.getFirstName());
+		jobseeker.setLastName(jobseekerDto.getLastName());
+		jobseeker.setNationalIdentity(jobseekerDto.getNationalIdentity());
+		jobseeker.setBirthOfYear(jobseekerDto.getBirthOfYear());
+		jobseeker.setVerified(false);
+		
+		
 		
 		String name = jobseeker.getFirstName();
 		String surname = jobseeker.getLastName();

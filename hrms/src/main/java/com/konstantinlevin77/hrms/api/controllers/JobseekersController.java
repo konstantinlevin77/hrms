@@ -23,6 +23,7 @@ import com.konstantinlevin77.hrms.adapters.NationalIdVerifierAdapter.TestNationa
 import com.konstantinlevin77.hrms.business.abstracts.JobseekerService;
 import com.konstantinlevin77.hrms.core.results.concretes.ErrorDataResult;
 import com.konstantinlevin77.hrms.entities.concretes.Jobseeker;
+import com.konstantinlevin77.hrms.entities.dtos.JobseekerWithoutCvDto;
 
 @RestController
 @RequestMapping("/api/jobseekers")
@@ -45,8 +46,8 @@ public class JobseekersController {
 	}
 	
 	@PostMapping("/add")
-	public ResponseEntity<?>  add(@Valid @RequestBody Jobseeker jobseeker) {
-		return ResponseEntity.ok(this.jobseekerService.add(jobseeker, new TestNationalIdVerifierAdapter()));
+	public ResponseEntity<?>  add(@Valid @RequestBody JobseekerWithoutCvDto jobseekerDto) {
+		return ResponseEntity.ok(this.jobseekerService.add(jobseekerDto, new TestNationalIdVerifierAdapter()));
 		
 	}
 	
