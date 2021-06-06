@@ -26,7 +26,6 @@ public class JobseekerExperience {
 	
 	@ManyToOne
 	@JoinColumn(name="cv_id")
-	@JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.WRITE_ONLY)
 	private JobseekerCv jobseekerCv;
 	
 	@NotNull

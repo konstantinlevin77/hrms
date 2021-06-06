@@ -3,6 +3,7 @@ package com.konstantinlevin77.hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.konstantinlevin77.hrms.business.abstracts.JobseekerCvService;
@@ -61,22 +62,26 @@ public class JobseekerCvManager implements JobseekerCvService {
 		// Iterating over the experiences and saving them
 		for (JobseekerExperience jobseekerExperience : jobseekerCv.getJobseekerExperiences()) {
 			jobseekerExperience.setId(0);
+			jobseekerExperience.setJobseekerCv(jobseekerCv);
 			this.jobseekerExperienceDao.save(jobseekerExperience);
 		}
 		
 		// Iterating over the languages and saving them
 		for (JobseekerLanguage jobseekerLanguage : jobseekerCv.getJobseekerLanguages()) {
 			jobseekerLanguage.setId(0);
+			jobseekerLanguage.setJobseekerCv(jobseekerCv);
 			this.jobseekerLanguageDao.save(jobseekerLanguage);
 		}
 		
 		for (JobseekerSchool jobseekerSchool : jobseekerCv.getJobseekerSchools()) {
 			jobseekerSchool.setId(0);
+			jobseekerSchool.setJobseekerCv(jobseekerCv);
 			this.jobseekerSchoolDao.save(jobseekerSchool);
 		}
 		
 		for (JobseekerTechnology jobseekerTechnology : jobseekerCv.getJobseekerTechnologies()) {
 			jobseekerTechnology.setId(0);
+			jobseekerTechnology.setJobseekerCv(jobseekerCv);
 			this.jobseekerTechnologyDao.save(jobseekerTechnology);
 		}
 		

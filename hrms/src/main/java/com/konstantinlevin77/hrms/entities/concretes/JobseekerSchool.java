@@ -32,11 +32,6 @@ public class JobseekerSchool {
 	@Column(name="id")
 	private int id;
 	
-	@ManyToOne
-	@JoinColumn(name="cv_id")
-	@JsonProperty(access = Access.WRITE_ONLY)
-	private JobseekerCv jobseekerCv;
-	
 	@NotNull
 	@NotBlank
 	@Column(name="name")
@@ -50,6 +45,9 @@ public class JobseekerSchool {
 	@Column(name="graduate_year",nullable=true)
 	private Short graduateYear;
 	
+	@ManyToOne
+	@JoinColumn(name="cv_id")
+	private JobseekerCv jobseekerCv;
 	
 	
 	
