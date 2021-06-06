@@ -24,6 +24,7 @@ public class Employer extends User{
 	@Column(name="company_name")
 	private String companyName;
 	
+	
 	@NotNull
 	@NotBlank
 	@Column(name="company_website")
