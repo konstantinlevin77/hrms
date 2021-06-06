@@ -11,6 +11,8 @@
 * This repository lisenced with MIT lisence.
 * I'm waiting for your pull requests, thanks in advance.
 
+## ER Diagram
+![er](https://user-images.githubusercontent.com/60093612/120936357-07d90780-c710-11eb-99fb-611753cec82a.png)
 
 
 
