@@ -3,8 +3,8 @@ import { Menu, Button } from 'semantic-ui-react'
 
 export default function Navi() {
     return (
-        <div>
-            <Menu >
+        <div style={{marginBottom:20}}>
+            <Menu>
                 <Menu.Item>
                     <b>Human Resources MS</b>
                 </Menu.Item>
