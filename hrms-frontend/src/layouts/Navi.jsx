@@ -4,15 +4,27 @@ import { Menu, Button } from 'semantic-ui-react'
 export default function Navi() {
     return (
         <div>
-            <Menu>
-                <Button size={'medium'}>
-                    Job Postings
+            <Menu >
+                <Menu.Item>
+                    <b>Human Resources MS</b>
+                </Menu.Item>
+                <Menu.Item>
+                    <Button size={'medium'}>
+                        Job Postings
                 </Button>
-                <Button size={'medium'}>
-                    Employers
+                </Menu.Item>
+                <Menu.Item>
+                    <Button size={'medium'}>
+                        Employers
                 </Button>
-                <Button primary size={'medium'}>Sign In</Button>
-                <Button secondary size={'medium'}>Sign Up</Button>
+                </Menu.Item>
+                <Menu.Item>
+                    <Button primary size={'medium'}>Sign In</Button>
+                </Menu.Item>
+                <Menu.Item>
+                    <Button secondary size={'medium'}>Sign Up</Button>
+                </Menu.Item>
+
             </Menu>
         </div>
     )
