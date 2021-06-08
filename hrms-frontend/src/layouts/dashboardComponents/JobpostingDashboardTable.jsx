@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, Menu, Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 
 export default function JobpostingDashboardTable() {
     return (
