@@ -5,7 +5,7 @@ import SignedIn from './naviComponents/SignedIn'
 
 export default function Navi() {
     return (
-        <div style={{marginBottom:20}}>
+        <div style={{ marginBottom: 20 }}>
             <Menu>
                 <Menu.Item>
                     <b>Human Resources MS</b>
@@ -15,7 +15,7 @@ export default function Navi() {
                         Job Postings
                 </Button>
                 </Menu.Item>
-                <SignedIn/>
+                <SignedIn />
             </Menu>
         </div>
     )

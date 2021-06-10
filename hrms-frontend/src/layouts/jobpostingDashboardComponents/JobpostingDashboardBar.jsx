@@ -1,5 +1,6 @@
 import React from 'react'
 import { Menu, Dropdown} from 'semantic-ui-react'
+import JobPostingDashboardBarAddButton from './JobPostingDashboardBarAddButton'
 
 export default function JobpostingDashboardBar() {
     return (
@@ -18,8 +19,9 @@ export default function JobpostingDashboardBar() {
 
                 <Menu.Item>
 
-                <div class="ui input"><input type="text" placeholder="Maximum Salart"/></div>
+                <div class="ui input"><input type="text" placeholder="Maximum Salary"/></div>
         </Menu.Item>
+        <JobPostingDashboardBarAddButton/>
             </Menu>
         </div>
     )
