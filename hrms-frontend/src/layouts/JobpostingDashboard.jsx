@@ -1,6 +1,6 @@
 import React from 'react'
-import JobpostingDashboardBar from './dashboardComponents/JobpostingDashboardBar'
-import JobpostingDashboardTable from './dashboardComponents/JobpostingDashboardTable'
+import JobpostingDashboardBar from './jobpostingDashboardComponents/JobpostingDashboardBar'
+import JobpostingDashboardTable from './jobpostingDashboardComponents/JobpostingDashboardTable'
 
 export default function JobpostingDashboard() {
     return (
