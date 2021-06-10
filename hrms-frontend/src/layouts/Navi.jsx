@@ -1,5 +1,7 @@
 import React from 'react'
 import { Menu, Button } from 'semantic-ui-react'
+import SignedIn from './naviComponents/SignedIn'
+import SignedOut from './naviComponents/SignedOut'
 
 export default function Navi() {
     return (
@@ -18,13 +20,7 @@ export default function Navi() {
                         Employers
                 </Button>
                 </Menu.Item>
-                <Menu.Item>
-                    <Button primary size={'medium'}>Sign In</Button>
-                </Menu.Item>
-                <Menu.Item>
-                    <Button secondary size={'medium'}>Sign Up</Button>
-                </Menu.Item>
-
+                <SignedIn/>
             </Menu>
         </div>
     )

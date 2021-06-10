@@ -7,7 +7,7 @@ export default function Footer() {
         <div class="ui inverted vertical footer segment">
             <div class="ui container">
                 <p>Human Resources Management System Project</p>
-                <p>This project is completely under in MIT license.</p>
+                <p>This project is completely under MIT license.</p>
     </div>
         </div>
     )
