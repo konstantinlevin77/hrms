@@ -3,7 +3,7 @@ import Navi from './layouts/Navi';
 
 import 'semantic-ui-css/semantic.min.css'
 import Footer from './layouts/Footer';
-import SignInMenu from './pages/SignInMenu';
+import SignUpMenu from './pages/SignUpMenu';
 
 
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Navi />
-      <SignInMenu/>
+      <SignUpMenu/>
       <Footer />
     </div>
   );
