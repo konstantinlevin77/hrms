@@ -17,7 +17,8 @@
 ## UML Diagram of Frontend 
 
 I might update this diagram, but you'll always be able to find old diagrams as well.
-![Untitled Workspace](https://user-images.githubusercontent.com/60093612/121060542-762ed000-c7cb-11eb-964b-6c92c01161f4.png)
+![diagram_v2](https://user-images.githubusercontent.com/60093612/121710811-9c61b200-cae2-11eb-8005-c9f16f79c594.png)
+
 
 
 
