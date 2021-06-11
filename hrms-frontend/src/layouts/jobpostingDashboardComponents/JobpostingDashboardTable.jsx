@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Table } from 'semantic-ui-react'
+import JobPostingService from '../../services/JobPostingService';
 
 export default function JobpostingDashboardTable() {
+
+    const [jobpostings, setJobpostings] = useState([]);
+
+    useEffect(() => {
+        let jobPostingService = new JobPostingService()
+        jobPostingService.getActiveAll().then(result => setJobpostings(result.data.data))
+    })
+
+
     return (
+
         <div>
             <Table celled>
                 <Table.Header>
@@ -15,33 +26,19 @@ export default function JobpostingDashboardTable() {
                         <Table.HeaderCell>Number of Open Positions</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
-
                 <Table.Body>
-                    <Table.Row>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                    </Table.Row>
-                    <Table.Row>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                        <Table.Cell>Cell</Table.Cell>
-                    </Table.Row>
+                    {
+                        jobpostings.map((jobposting) => (
+                            <Table.Row key={jobposting.id}>
+                                <Table.Cell>jobposting.description</Table.Cell>
+                                <Table.Cell>jobposting.position.name</Table.Cell>
+                                <Table.Cell>jobposting.city</Table.Cell>
+                                <Table.Cell>jobposting.min_salary</Table.Cell>
+                                <Table.Cell>jobposting.max_salary</Table.Cell>
+                                <Table.Cell>jobposting.num_open_positions</Table.Cell>
+                            </Table.Row>
+                        ))
+                    }
                 </Table.Body>
             </Table>
         </div>

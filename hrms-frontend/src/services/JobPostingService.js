@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default class jobPostingService{
+export default class JobPostingService{
 
     getAll(){
         return axios.get("localhost:8080/api/jobPostings/getall")

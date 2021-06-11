@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default class jobseekerService {
+export default class JobseekerService {
 
     getAll(){
         return axios.get("localhost:8080/api/jobseekers/getall")
