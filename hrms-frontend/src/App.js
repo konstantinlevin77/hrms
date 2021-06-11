@@ -3,16 +3,16 @@ import Navi from './layouts/Navi';
 
 import 'semantic-ui-css/semantic.min.css'
 import Footer from './layouts/Footer';
-import JobpostingList from './pages/JobpostingList';
-import JobpostingAddMenu from './pages/JobpostingAddMenu';
+import SignInMenu from './pages/SignInMenu';
+
 
 
 function App() {
   return (
     <div className="App">
-      <Navi/>
-      <JobpostingAddMenu/>
-      <Footer/>
+      <Navi />
+      <SignInMenu/>
+      <Footer />
     </div>
   );
 }

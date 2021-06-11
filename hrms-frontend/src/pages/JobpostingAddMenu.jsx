@@ -44,12 +44,3 @@ export default function JobpostingAddMenu() {
         </div>
     )
 }
-
-
-/*
-
-Bu bir sayfa, bunun içine bir div
-Div centerlanacak ve border eklenecek
-içine ilgili butonlar ve metinler eklenecek
-en aşağıya buton eklenecek.
-*/

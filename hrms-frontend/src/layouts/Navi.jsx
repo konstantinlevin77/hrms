@@ -1,6 +1,6 @@
 import React from 'react'
 import { Menu, Button } from 'semantic-ui-react'
-import SignedIn from './naviComponents/SignedIn'
+import SignedOut from './naviComponents/SignedOut'
 
 
 export default function Navi() {
@@ -15,7 +15,7 @@ export default function Navi() {
                         Job Postings
                 </Button>
                 </Menu.Item>
-                <SignedIn />
+                <SignedOut/>
             </Menu>
         </div>
     )
