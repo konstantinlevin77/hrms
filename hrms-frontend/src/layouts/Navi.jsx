@@ -10,12 +10,14 @@ export default function Navi() {
                 <Menu.Item>
                     <b>Human Resources MS</b>
                 </Menu.Item>
-                <Menu.Item>
-                    <Button size={'medium'}>
-                        Job Postings
+                <Menu.Menu position="right">
+                    <Menu.Item>
+                        <Button size={'medium'}>
+                            Job Postings
                 </Button>
-                </Menu.Item>
-                <SignedOut/>
+                    </Menu.Item>
+                    <SignedOut />
+                </Menu.Menu>
             </Menu>
         </div>
     )
