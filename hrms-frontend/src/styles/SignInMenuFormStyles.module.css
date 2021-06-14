@@ -1,0 +1,30 @@
+.field{
+
+    border:1px solid dimgrey; 
+    border-radius: 10px;
+    margin: 5px;
+    display: block;
+    width: 220px;
+    height:25px;
+
+}
+
+.button {
+    transition-duration: 0.4s;
+    background-color: white;
+    width: 100px;
+    border-radius:10px;
+    border:2px solid dimgrey;
+    height:40px;
+  }
+  
+  .button:hover {
+    background-color: dimgrey; /* Green */
+    color: white;
+  }
+
+
+  .button:focus{
+
+    border-color: black;
+}
