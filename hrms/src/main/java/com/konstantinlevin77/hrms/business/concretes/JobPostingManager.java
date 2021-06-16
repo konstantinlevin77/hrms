@@ -74,6 +74,13 @@ public class JobPostingManager implements JobPostingService {
 	}
 
 
+	@Override
+	public DataResult<JobPosting> getById(int id) {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<JobPosting>(this.jobPostingDao.findById(id).get());
+		}
+
+
 	
 
 }

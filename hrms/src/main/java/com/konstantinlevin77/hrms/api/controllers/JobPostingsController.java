@@ -56,5 +56,9 @@ public class JobPostingsController {
 		return this.jobPostingService.getActiveJobPostingsByCompanyName(companyName);
 	}
 	
+	@GetMapping("/getById")
+	public DataResult<JobPosting> getById(@RequestParam int id) {
+		return this.jobPostingService.getById(id);
+	}
 
 }

@@ -19,4 +19,6 @@ public interface JobPostingService {
 	public DataResult<List<JobPosting>> getActiveJobPostingsOrderedByDate();
 	
 	public DataResult<List<JobPosting>> getActiveJobPostingsByCompanyName(String companyName);
+	
+	public DataResult<JobPosting> getById(int id);
 }

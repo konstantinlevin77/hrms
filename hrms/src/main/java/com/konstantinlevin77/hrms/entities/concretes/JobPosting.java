@@ -57,6 +57,18 @@ public class JobPosting {
 	@Column(name="active")
 	private boolean active;
 	
+	@NotNull
+	@Column(name="is_remote")
+	private boolean remote;
+	
+	@NotNull
+	@Column(name="is_full_time")
+	private boolean fullTime;
+	
+	@NotNull
+	@Column(name="is_approved")
+	private boolean approved;
+	
 	@ManyToOne
 	@JoinColumn(name="employer_id")
 	private Employer employer;

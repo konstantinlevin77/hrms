@@ -31,7 +31,7 @@ export default function JobpostingDashboardTable() {
                     {
                         jobpostings.map((jobposting) => (
                             <Table.Row key={jobposting.id}>
-                                <Table.Cell as={NavLink} to={`/jobpostings/${jobposting.id}`}>jobposting.position.name</Table.Cell>
+                                <Table.Cell as={NavLink} to={`/jobpostings/id=${jobposting.id}`}>jobposting.position.name</Table.Cell>
                                 <Table.Cell>jobposting.description</Table.Cell>
                                 <Table.Cell>jobposting.city</Table.Cell>
                                 <Table.Cell>jobposting.min_salary</Table.Cell>

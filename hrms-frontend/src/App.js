@@ -23,7 +23,7 @@ function App() {
       <Route exact path="/signIn" component={SignInMenu}/>
       <Route exact path="/signUp" component={SignUpMenu}/>
       <Route exact path="/jobpostings/add" component={JobpostingAddMenu}/>
-      <Route exact path="/jobpostings/:id" component={JobpostingDetailPage}/>
+      <Route exact path="/jobpostings/id=:id" component={JobpostingDetailPage}/>
     </div>
   );
 }
