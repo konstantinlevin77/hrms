@@ -28,5 +28,9 @@ export default class JobPostingService{
         return axios.post("localhost:8080/api/jobPostings/changeActiveById",id)
     }
 
+    getById(id) {
+        return axios.post("localhost:8080/api/jobPostings/getById",id);
+    }
+
 
 }

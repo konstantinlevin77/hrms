@@ -9,6 +9,8 @@ import MainMenu from './pages/MainMenu';
 import JobpostingList from './pages/JobpostingList'
 import SignUpMenu from './pages/SignUpMenu'
 import SignInMenu from './pages/SignInMenu'
+import JobpostingAddMenu from './pages/JobpostingAddMenu'
+import JobpostingDetailPage from './pages/JobpostingDetailPage';
 
 
 
@@ -20,7 +22,8 @@ function App() {
       <Route exact path="/jobpostings" component={JobpostingList}/>
       <Route exact path="/signIn" component={SignInMenu}/>
       <Route exact path="/signUp" component={SignUpMenu}/>
-      <Footer />
+      <Route exact path="/jobpostings/add" component={JobpostingAddMenu}/>
+      <Route exact path="/jobpostings/:id" component={JobpostingDetailPage}/>
     </div>
   );
 }
